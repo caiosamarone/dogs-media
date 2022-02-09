@@ -6,6 +6,10 @@ const types = {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     message: 'Insira um e-mail válido',
   },
+  password: {
+    regex: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/,
+    message: 'Preencha uma senha válida.',
+  },
 };
 
 const useForm = (type) => {
@@ -18,7 +22,8 @@ const useForm = (type) => {
   };
 
   const validate = (value) => {
-    if (type) return true;
+    if (type === false) return true;
+    console.log('value', value);
     if (value.length === 0) {
       setError('Preencha um valor válido');
       return false;
