@@ -1,4 +1,4 @@
-import { DOGS_LOGIN, DOGS_USER } from '../utils/routes/routes';
+import { DOGS_LOGIN, DOGS_USER, DOGS_API } from '../utils/routes/routes';
 
 export function TOKEN_POST(body) {
   return {
@@ -46,6 +46,19 @@ export function USER_POST(body) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
+    },
+  };
+}
+
+export function PHOTO_POST(formData, token) {
+  return {
+    url: DOGS_API + '/json/api/photo',
+    options: {
+      method: 'POST',
+      headers: {
+        Authorization: 'Bearer ' + token,
+      },
+      body: formData,
     },
   };
 }
