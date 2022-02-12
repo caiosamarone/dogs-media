@@ -62,3 +62,21 @@ export function PHOTO_POST(formData, token) {
     },
   };
 }
+export function PHOTOS_GET({ page, total, user }) {
+  return {
+    url: `${DOGS_API}/json/api/photo?page=${page}&_total=${total}&_user=${user}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
+    },
+  };
+}
+export function PHOTO_GET(id) {
+  return {
+    url: `${DOGS_API}/json/api/photo/${id}`,
+    options: {
+      method: 'GET',
+      cache: 'no-store',
+    },
+  };
+}
