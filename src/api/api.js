@@ -80,3 +80,18 @@ export function PHOTO_GET(id) {
     },
   };
 }
+
+export function COMMENT_POST(id, body) {
+  return {
+    url: `${DOGS_API}/json/api/comment/${id}`,
+    options: {
+      method: 'POST',
+      cache: 'no-store',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
