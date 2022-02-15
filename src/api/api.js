@@ -95,3 +95,16 @@ export function COMMENT_POST(id, body) {
     },
   };
 }
+
+export function PHOTO_DELETE(id) {
+  return {
+    url: `${DOGS_API}/json/api/photo/${id}`,
+    options: {
+      method: 'DELETE',
+      cache: 'no-store',
+      headers: {
+        Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+      },
+    },
+  };
+}
