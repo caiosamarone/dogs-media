@@ -24,11 +24,10 @@ const LoginCreate = () => {
       password: password.value,
       email: email.value,
     });
-    const { response, json } = await request(url, options);
+    const { response } = await request(url, options);
     if (response.ok) {
       userLogin(username.value, password.value);
     }
-    console.log(response);
   };
 
   return (

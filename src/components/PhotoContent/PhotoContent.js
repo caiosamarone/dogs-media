@@ -6,10 +6,10 @@ import styles from './PhotoContent.module.css';
 import { UserContext } from '../../utils/context/UserContext';
 import Image from '../Image/Image';
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, single }) => {
   const user = React.useContext(UserContext);
   return (
-    <div className={`${styles.photo}`}>
+    <div className={`${single ? styles.single : ''} ${styles.photo}`}>
       <div className={`${styles.img}`}>
         <Image alt={data.title} src={data.photo.src} />
       </div>
@@ -35,7 +35,11 @@ const PhotoContent = ({ data }) => {
           </ul>
         </div>
       </div>
-      <PhotoComments id={data.photo.id} comments={data.comments} />
+      <PhotoComments
+        single={single}
+        id={data.photo.id}
+        comments={data.comments}
+      />
     </div>
   );
 };

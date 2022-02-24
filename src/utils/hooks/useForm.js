@@ -27,7 +27,6 @@ const useForm = (type) => {
 
   const validate = (value) => {
     if (type === false) return true;
-    console.log('value', value);
     if (value.length === 0) {
       setError('Preencha um valor válido');
       return false;

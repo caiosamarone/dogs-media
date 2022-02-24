@@ -71,6 +71,7 @@ export function PHOTOS_GET({ page, total, user }) {
     },
   };
 }
+
 export function PHOTO_GET(id) {
   return {
     url: `${DOGS_API}/json/api/photo/${id}`,
