@@ -109,3 +109,28 @@ export function PHOTO_DELETE(id) {
     },
   };
 }
+
+export function PASSWORD_LOST(body) {
+  return {
+    url: `${DOGS_API}/json/api/password/lost`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
+export function PASSWORD_RESET(body) {
+  return {
+    url: `${DOGS_API}/json/api/password/reset`,
+    options: {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    },
+  };
+}
