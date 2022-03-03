@@ -16,8 +16,8 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <UserStorage>
+          <Header />
           <main className="AppBody">
-            <Header />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="login/*" element={<Login />} />
